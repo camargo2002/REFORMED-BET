@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CASSINO REFORMED</title>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0e1525;
+      color: #fff;
+    }
+    .stake-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #22c55e;
+      padding: 15px 30px;
+      box-shadow: 0 0 10px #00000050;
+    }
+    .stake-header .left .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+    }
+    .stake-header .center {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .balance {
+      background-color: #1e293b;
+      padding: 6px 12px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #fff;
+      font-size: 14px;
+    }
+    .deposit-input {
+      width: 80px;
+      padding: 6px;
+      border-radius: 6px;
+      border: none;
+      background-color: #1f2b3e;
+      color: white;
+    }
+    .deposit-btn {
+      background-color: #2176ff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .deposit-btn:hover {
+      background-color: #1a5ed9;
+    }
+    .stake-header .right {
+      display: flex;
+      gap: 20px;
+    }
+    .icon {
+      cursor: pointer;
+      filter: brightness(1.2);
+    }
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 30px;
+    }
+    .game-card {
+      background-color: #1f2b3e;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: transform 0.2s ease;
+      text-align: center;
+      padding: 20px;
+      cursor: pointer;
+      text-decoration: none;
+      color: #ffffff;
+    }
+    .game-card:hover {
+      transform: scale(1.05);
+      background-color: #273349;
+    }
+    .game-card img {
+      width: 64px;
+      margin-bottom: 12px;
+    }
+    .game-card h3 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header class="stake-header">
+    <div class="left">
+      <span class="logo">REFORMED BET</span>
+    </div>
+    <div class="center">
+      <div class="balance">
+        <span id="balanceDisplay">R$0.00</span>
+        <img src="https://img.icons8.com/ios-glyphs/20/ffffff/coin-in-hand.png" alt="Coin">
+      </div>
+      <input id="depositValue" class="deposit-input" type="number" value="500" min="1" step="1">
+      <button class="deposit-btn" onclick="addFunds()">Depositar</button>
+    </div>
+    <div class="right">
+      <img src="https://img.icons8.com/ios-glyphs/24/ffffff/appointment-reminders--v1.png" alt="Notificações" class="icon" />
+      <img src="https://img.icons8.com/ios-glyphs/24/ffffff/user--v1.png" alt="Perfil" class="icon" />
+    </div>
+  </header>
+
+  <div class="game-grid">
+    <a href="games\Dice.html" class="game-card">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/dice.png" alt="Dice">
+      <h3>Dice</h3>
+    </a>
+    <a href="games\Mines.html" class="game-card">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/bomb.png" alt="Mines">
+      <h3>Mines</h3>
+    </a>
+    <!-- <a href="Blackjack/index.html" class="game-card">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/cards.png" alt="Blackjack">
+      <h3>Blackjack</h3>
+    </a> -->
+    <a href="games\Keno.html" class="game-card">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/number-pad.png" alt="Keno">
+      <h3>Keno</h3>
+    </a>
+    <!-- <a href="Crash/index.html" class="game-card">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/activity.png" alt="Crash">
+      <h3>Crash</h3>
+    </a> -->
+    <!-- <a href="Plinko/index.html" class="game-card">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/sphere.png" alt="Plinko">
+      <h3>Plinko</h3>
+    </a> -->
+    <!-- <a href="Roulette/index.html" class="game-card">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/roulette.png" alt="Roleta">
+      <h3>Roulette</h3>
+    </a> -->
+    <a href="games\Tower.html" class="game-card">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/city-buildings.png" alt="Tower">
+      <h3>Tower</h3>
+    </a>
+    <!-- <a href="Wheel/index.html" class="game-card">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/roulette.png" alt="Wheel">
+      <h3>Wheel</h3>
+    </a> -->
+    <a href="games\Limbo.html" class="game-card">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/graph.png" alt="Limbo">
+      <h3>Limbo</h3>
+    </a>
+    <!-- <a href="Baccarat/index.html" class="game-card">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/joker.png" alt="Baccarat">
+      <h3>Baccarat</h3>
+    </a> -->
+    <a href="games\Rps.html" class="game-card">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/hand-rock.png" alt="Pedra Papel Tesoura">
+      <h3>Pedra Papel Tesoura</h3>
+    </a>
+    <a href="games\Coinflip.html" class="game-card">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/coins.png" alt="Coinflip">
+      <h3>Coinflip</h3>
+    </a>
+  </div>
+
+  <script>
+    function updateBalanceDisplay() {
+      let balance = parseFloat(localStorage.getItem("sharedBalance"));
+      if (isNaN(balance)) {
+        balance = 1000;
+        localStorage.setItem("sharedBalance", balance.toFixed(8));
+      }
+      document.getElementById("balanceDisplay").textContent = "R$ " + balance.toFixed(2);
+    }
+
+    function addFunds() {
+      const input = document.getElementById("depositValue");
+      const added = parseFloat(input?.value);
+      if (isNaN(added) || added <= 0) {
+        alert("Insira um valor válido.");
+        return;
+      }
+      let current = parseFloat(localStorage.getItem("sharedBalance")) || 0;
+      let newBalance = current + added;
+      localStorage.setItem("sharedBalance", newBalance.toFixed(8));
+      updateBalanceDisplay();
+    }
+
+    updateBalanceDisplay();
+  </script>
+</body>
+</html>
